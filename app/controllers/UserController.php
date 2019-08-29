@@ -9,6 +9,7 @@ class UserController extends \Phalcon\Mvc\Controller
 
     public function createAction()
     {
+        // git test
         $user = new User();
         $user->email = "emre.eldemir@gmail.com";
         $user->password = "123";
