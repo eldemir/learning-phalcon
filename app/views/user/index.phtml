@@ -1,12 +1,23 @@
 <h1>user</h1>
+<table class='table table-condensed'>
 <?php
 if (property_exists($single, 'id')) {
-    echo $single->id;
-    echo $single->email;
-}
-echo "<hr>";
-foreach ($all as $user) {
-    echo $user->id;
-    echo $user->email;
+    echo "<tr>";
+    echo "<td>".$single->id."</td>";
+    echo "<td>".$single->email."</td>";
+    echo "</tr>";
 }
 ?>
+</table>
+
+
+<table class='table table-condensed'>
+<?php
+foreach ($all as $user) {
+    echo "<tr>";
+    echo "<td>".Phalcon\Tag::linkTo("signup/register/{$user->id}", "Delete!")."</td>";
+    echo "<td>".$user->email."</td>";
+    echo "</tr>";
+}
+?>
+</table>

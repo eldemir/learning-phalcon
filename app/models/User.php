@@ -4,7 +4,7 @@ use Phalcon\Validation;
 use Phalcon\Validation\Validator\Email as EmailValidator;
 use Phalcon\Mvc\Model\Behavior\SoftDelete;
 
-class User extends \Phalcon\Mvc\Model
+class User extends BaseModel
 {
 
     /**
@@ -81,15 +81,6 @@ class User extends \Phalcon\Mvc\Model
         ]));
     }
 
-    public function beforeCreate()
-    {
-        $this->created_at=date("Y-m-d H:i:s");
-    }
-
-    public function beforeUpdate()
-    {
-        $this->updated_at=date("Y-m-d H:i:s");
-    }
 
 
     /**
