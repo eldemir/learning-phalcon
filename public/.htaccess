@@ -1,0 +1,14 @@
+AddDefaultCharset UTF-8
+
+<IfModule mod_rewrite.c>
+
+    #RewriteCond %{HTTPS} !=on
+    #RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R,L]   
+
+    RewriteEngine On
+
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ index.php?_url=/$1 [QSA,L]
+
+</IfModule>

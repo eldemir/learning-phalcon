@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        
+        <?= \Phalcon\Tag::stylesheetLink(array('css/basic/bootstrap.min.css')) ?>
+        
+        <title><?= $title?></title>
+
+    </head>
+    <body>
+        <div class="container">
+            <?php echo $this->getContent(); ?>
+        </div>
+
+      
+        <?= Phalcon\Tag::javascriptInclude('js/basic/jquery-3.4.1.min.js') ?>
+        <?= Phalcon\Tag::javascriptInclude('js/basic/popper.min.js') ?>
+        <?= Phalcon\Tag::javascriptInclude('js/basic/bootstrap.min.js') ?>
+
+        <?php
+        if ($this->assets->collection('footer')->count()) {
+            echo $this->assets->outputJs('footer');
+        }
+        ?>
+
+        
+    </body>
+</html>
